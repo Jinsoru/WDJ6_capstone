@@ -6,6 +6,7 @@
 * APP SOURCE CODE : https://github.com/JunHyeok95/reactNative2/tree/master/Proto2
 * HW SOURCE CODE : https://github.com/InsikJeong/3WDJ_6
 
+
 # AWS EC2 Linux 설정 가이드
 1. sudo apt-get update
 2. sudo apt-get upgrade
@@ -34,8 +35,26 @@
       sudo vi mysqld.cnf
       외부접속 가능하도록 0.0.0.0으로 수정
 23. mysql -uroot -p
-24. cd /etc/apache2/sites-available/
-25. sudo vi 000-default.conf 
+24. exit;
+
+### 우리 프로젝트 가져오기
+1. sudo git clone 프로젝트주소 폴더명
+2. sudo composer update
+3. sudo composer install
+4. sudo npm install
+5. mysql -uroot -p
+#### mysql 설정 변경
+6. grant all privileges on *.* to 'root'@'%' identified by '비밀번호';
+7. create database kurumamori;
+8. flush privileges;
+9. exit;
+10. cd /var/www/html/폴더명
+11. sudo php artisan key:generate 
+12. sudo php artisan migrate:refresh --seed
+13. sudo cp .env.example .env
+14. .env 수정
+15. cd /etc/apache2/sites-available/
+16. sudo vi 000-default.conf 
 #### 000-default.conf 수정
 ```
 DocumentRoot /var/www/폴더명/public
@@ -47,7 +66,7 @@ DocumentRoot /var/www/폴더명/public
 </Directory>
 ```
 #### .htaccess 파일 수정
-26. sudo vim /var/www/폴더명/public/.htaccess
+17. sudo vim /var/www/폴더명/public/.htaccess
 ```
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
@@ -68,29 +87,12 @@ RewriteEngine On
     RewriteRule ^ index.php [L]
 </IfModule>
 ```
-27. cd /var/www/html
-28. sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-29. sudo apt-get install -y nodejs
-30. node -v    npm -v
-31. sudo apt-get install build-essential
-
-#### 우리 프로젝트 가져오기
-1. sudo git clone 프로젝트주소 폴더명
-2. sudo composer update
-3. sudo composer install
-4. sudo npm install
-5. mysql -uroot -p
-#### mysql 설정 변경
-6. grant all privileges on *.* to 'root'@'%' identified by '비밀번호';
-7. create database kurumamori;
-8. flush privileges;
-9. exit;
-10. cd /var/www/html/폴더명
-11. sudo php artisan key:generate 
-12. sudo php artisan migrate:refresh --seed
-13. sudo cp .env.example .env
-14. .env 수정
+18. cd /var/www/html
+19. sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+20. sudo apt-get install -y nodejs
+21. node -v    npm -v
+22. sudo apt-get install build-essential
 #### 각 폴더의 접근권한 부여
-15. sudo chmod 777 -R storage
-16. sudo chmod 777 -R bootstrap
-17. sudo service apache2 restart
+23. sudo chmod 777 -R storage
+24. sudo chmod 777 -R bootstrap
+25. sudo service apache2 restart
