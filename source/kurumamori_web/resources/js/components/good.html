@@ -1,0 +1,20 @@
+<div class="textbox"> 
+    <label for="ex_input">아이디</label> 
+    <input type="text" id="ex_input"> 
+</div>
+<style>
+    .textbox {position: relative;} 
+    .textbox label { 
+        position: absolute; 
+        top: 1px; /* input 요소의 border-top 설정값 만큼 */ 
+        left: 1px; /* input 요소의 border-left 설정값 만큼 */ 
+        padding: .8em .5em; /* input 요소의 padding 값 만큼 */ 
+    } 
+    .textbox input[type="text"], 
+    .textbox input[type="password"] 
+    { 
+        padding: .8em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */ 
+    }
+
+    .textbox:hover{font-size:3px;}  
+</style> 

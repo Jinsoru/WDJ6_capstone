@@ -1,0 +1,58 @@
+[
+  {
+    "name": "name - 1",
+    "address": "address - a",
+    "coords": {
+      "latitude": 35.92,
+      "longitude": 128.62
+    }
+  },
+  {
+    "name": "name - 2",
+    "address": "address - b",
+    "coords": {
+      "latitude": 35.96,
+      "longitude": 128.62
+    }
+  },
+  {
+    "name": "name - 3",
+    "address": "address - c",
+    "coords": {
+      "latitude": 36,
+      "longitude": 128.62
+    }
+  },
+  {
+    "name": "name - 4",
+    "address": "address - d",
+    "coords": {
+      "latitude": 35.88,
+      "longitude": 128.66
+    }
+  },
+  {
+    "name": "name - 5",
+    "address": "address - e",
+    "coords": {
+      "latitude": 35.88,
+      "longitude": 128.7
+    }
+  },
+  {
+    "name": "name - 6",
+    "address": "address - f",
+    "coords": {
+      "latitude": 35.88,
+      "longitude": 128.74
+    }
+  },
+  {
+    "name": "name - 7",
+    "address": "address - g",
+    "coords": {
+      "latitude": 35.9,
+      "longitude": 128.6
+    }
+  }
+]
