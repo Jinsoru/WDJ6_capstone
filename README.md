@@ -19,7 +19,7 @@
 10. sudo apt-get install php-cli
 11. sudo apt install mysql-server
 12. cd /var/www/html/
-<!-- laravel 테스트 -->
+#### laravel 테스트
 13. sudo curl -O https://getcomposer.org/composer.phar
 14. sudo mv composer.phar composer
 15. sudo chmod +x composer
@@ -36,7 +36,7 @@
 23. mysql -uroot -p
 24. cd /etc/apache2/sites-available/
 25. sudo vi 000-default.conf 
-<!-- 000-default.conf 수정 -->
+#### 000-default.conf 수정
 ```
 DocumentRoot /var/www/폴더명/public
 <Directory "/var/www/폴더명/public">
@@ -46,7 +46,7 @@ DocumentRoot /var/www/폴더명/public
      allow from all
 </Directory>
 ```
-<!-- .htaccess 파일 수정 -->
+#### .htaccess 파일 수정
 26. sudo vim /var/www/폴더명/public/.htaccess
 ```
 <IfModule mod_rewrite.c>
@@ -74,13 +74,13 @@ RewriteEngine On
 30. node -v    npm -v
 31. sudo apt-get install build-essential
 
-<!-- 우리 프로젝트 가져오기 -->
+#### 우리 프로젝트 가져오기
 1. sudo git clone 프로젝트주소 폴더명
 2. sudo composer update
 3. sudo composer install
 4. sudo npm install
 5. mysql -uroot -p
-<!-- mysql 설정 변경 -->
+#### mysql 설정 변경
 6. grant all privileges on *.* to 'root'@'%' identified by '비밀번호';
 7. create database kurumamori;
 8. flush privileges;
@@ -90,7 +90,7 @@ RewriteEngine On
 12. sudo php artisan migrate:refresh --seed
 13. sudo cp .env.example .env
 14. .env 수정
-<!-- 각 폴더의 접근권한 부여 -->
+#### 각 폴더의 접근권한 부여
 15. sudo chmod 777 -R storage
 16. sudo chmod 777 -R bootstrap
 17. sudo service apache2 restart
